@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import env from "dotenv"
-import { ApiError } from "../utils/apiError.js";
 env.config();
 const connectDb = async () => {
   try {
@@ -9,8 +8,7 @@ const connectDb = async () => {
     );
     console.log("Mongodb Connected");
   } catch (error) {
-    throw new ApiError(500,'Failed to Connect Db',error);
-  }
+console.log(error);  }
 }
 
 export default connectDb;
