@@ -53,7 +53,7 @@ export const loginController = expressAsyncHandler(async (req, res) => {
     const AccessToken = await CheckUser.generateAccessToken();
   
     if (!RefeshToken || !AccessToken)
-      throw new ApiError(500, "Failed to generate Refresh Token");
+      return res.status(400).json(new ApiError("Failed to Generate Refresh Token"));
   
     CheckUser.refreshToken = RefeshToken;
     CheckUser.save({ validateBeforeSave: false });
