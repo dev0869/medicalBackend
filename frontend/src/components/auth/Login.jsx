@@ -20,7 +20,7 @@ const Login = () => {
   useEffect(() => {
     const formdata = async () => {
       try {
-        const res = await axios.post("https://devfolio.onrender.com/api/user/login", data)
+        const res = await axios.post("https://pika-8f6s.onrender.com/api/user/login", data)
         // const res = await axios.post("https://api.freeapi.app/api/v1/users/login", data)
         console.log(res.data);
         localStorage.setItem('AccessToken',res.data.data.AccessToken)

@@ -15,11 +15,12 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(connectDb)
 app.use(cookieParser());
 app.use("/api", authRoute);
 
-connectDb()
-  .then(() =>
+
+
     app.listen(port, () => {
       console.log(`Server is litening on http://localhost:${port}  /`);
     })
