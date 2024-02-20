@@ -1,6 +1,7 @@
 import expressAsyncHandler from "express-async-handler";
 import { User } from "../models/user.model.js";
-import { ApiError } from "../utils/apiError.js";
+import { ApiError } from "../utils/ApiError.js";
+
 import { ApiRes } from "../utils/ApiRes.js";
 
 export const registerController = expressAsyncHandler(async (req, res) => {
